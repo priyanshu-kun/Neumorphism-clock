@@ -1,0 +1,99 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: pink;
+}
+
+.clock-body {
+    height: 500px;
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(clock.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 6px solid rgb(255, 205, 212);
+    border-radius: 50%;
+   box-shadow: 0 -25px 18px rgba(255, 214, 224, 0.5),
+                  inset 0 -25px 18px rgba(255, 214, 224, 0.5),
+                 0 25px 18px rgba(253, 165, 181, 0.5),
+                 inset 0 25px 18px rgba(253, 165, 181, 0.5);
+    transition: all 700ms ease-out;
+}
+.clock-body:hover {
+   transform: scale(1.1);
+}
+
+.clock-body::before {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: white;
+  border-radius: 50%;
+  z-index: 100;
+}
+
+.clock-body .hour,
+.clock-body .min,
+.clock-body .sec {
+    position: absolute;
+}
+
+.clock-body .hour .hr {
+    width: 200px;
+    height: 200px;
+}
+.clock-body .min .mn {
+    width: 220px;
+    height: 220px;
+}
+.clock-body .sec .sc {
+    width: 240px;
+    height: 240px;
+}
+
+.hr,.mn,.sc {
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    /* position: absolute; */
+}
+
+.hr::before {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 120px;
+    bottom: 50%;
+    background: rgb(255, 0, 128);
+    border-radius: 8px 8px 0 0;
+}
+.mn::before {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 135px;
+    bottom: 50%;
+    background: hotpink;
+    border-radius: 8px 8px 0 0;
+}
+.sc::before {
+    content: "";
+    position: absolute;
+    width: 4px;
+    height: 180px;
+    bottom: 35%;
+    background: rgb(255, 255, 255);
+    border-radius: 8px;
+}
